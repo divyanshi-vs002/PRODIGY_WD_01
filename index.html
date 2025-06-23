@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Candara';
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #d3d3d3, #ffffff);
+    }
+
+    .header {
+      position: relative;
+      width: 100%;
+      height: 650px;
+      background: url('bg.png') no-repeat center center/cover;
+      box-shadow: 0 40px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .logo-container img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+
+    .head1 {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 16%;
+      top: 1%;
+      background-color: rgba(51, 50, 50, 0.2);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .search-bar {
+      border: 1.5px solid #b9b6b6;
+      background: transparent;
+      padding: 8px 12px 8px 36px;
+      font-size: 16px;
+      border-radius: 30px;
+      width: 280px;
+      margin-left: 80px;
+      background-repeat: no-repeat;
+      background-position: 0px center;
+      background-size: 18px;
+      animation: fadeInUp 0.8s ease forwards;
+      transition: all 0.3s ease;
+    }
+
+    .search-bar:hover{
+        border-color: #f1eded;
+        transform: scale(1.1);
+    }
+    .menu-links {
+      display: flex;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    .menu-links a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #bcbebe;
+      font-weight: bold;
+      transition: transform 0.3s ease, color 0.3s ease;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .menu-links a:hover {
+      color: #ecf6f7;
+      transform: scale(1.9);
+    }
+
+    .divider {
+      font-weight: bold;
+      color: #aba6a6;
+    }
+        .divider:hover{
+            color: #ecf6f7;
+        }  
+
+    .icon-menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(86, 82, 82, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .overlay-content {
+      text-align: center;
+      animation: slideInFromRight 0.5s ease;
+    }
+
+    .overlay-content input,
+    .overlay-content a {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid #b5b0b0;
+      border-radius: 30px;
+      font-size: 18px;
+      width: 80%;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .overlay-content a {
+      text-decoration: none;
+      color: #cbc8c8;
+    }
+
+    .overlay-content input:focus,
+    .overlay-content a:hover {
+      transform: scale(1.05);
+      color: #ffffff;
+       border: 2px solid #f1eded;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .head2 {
+      position: absolute;
+      left: 10%;
+      width: 8%;
+      height: 100%;
+      top: 0%;
+      background-color: rgba(250, 246, 243, 0.2);
+    }
+
+    .head-name {
+      color: white;
+      font-size: 30px;
+      padding-top: 15px;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+      position: relative;
+      z-index: 2;
+      font-family: 'Algerian', serif;
+      text-align: center;
+      animation: fadeInUp 5s ease forwards;
+    }
+
+    .head-name span {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      display: inline-block;
+    }
+
+    /* ✅ Responsive Styles */
+    @media (max-width: 800px) {
+        .header{
+            height: 550px;
+        }
+      .header-top {
+        display: none;
+      }
+
+      .icon-menu {
+        display: block;
+      }
+
+      .logo-container img {
+        width: 50px;
+        height: 50px;
+
+      }
+
+      .head-name {
+        font-size: 20px;
+      }
+
+      .head2 {
+        width: 12%;
+        height: 550px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-container {
+        top: 10px;
+        left: 10px;
+      }
+
+      .search-bar {
+        width: 200px;
+        font-size: 14px;
+      }
+
+      .menu-links a {
+        font-size: 14px;
+      }
+
+      .overlay-content input,
+      .overlay-content a {
+        width: 90%;
+        font-size: 16px;
+      }
+
+      .head-name {
+        font-size: 14px;
+      }
+
+      .head2 {
+        width: 16%;
+      }
+    
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="head1">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <div class="icon-menu" id="menuIcon" >☰</div>
+
+      <div class="header-top">
+        <input type="text" class="search-bar" placeholder="Search..." />
+        <div class="menu-links">
+          <a href="task1.html">Home</a>
+          <span class="divider">|</span>
+          <a href="#">About Us</a>
+          <span class="divider">|</span>
+          <a href="#">Service</a>
+          <span class="divider">|</span>
+          <a href="#">Contact</a>
+          <span class="divider">|</span>
+          <a href="#">Login</a>
+        </div>
+      </div>
+
+      <div class="overlay" id="menuOverlay">
+        <div class="overlay-content">
+          <input type="text" placeholder="Search..." />
+          <a href="#">About Us</a>
+          <a href="#">Service</a>
+          <a href="#">Contact</a>
+          <a href="#">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="head2">
+      <div class="head-name">
+        
+        <span style="font-size: 50PX;">P</span><br />
+     <span>R</span><br />
+        <span>O</span><br />
+        <span>D</span><br />
+        <span>I</span><br />
+        <span>G</span><br />
+        <span>Y</span><br /><br />
+      
+        <span>I</span><br />
+        <span>N</span><br />
+        <span>T</span><br />
+        <span>E</span><br />
+        <span>R</span><br />
+        <span>N</span><br />
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuIcon = document.getElementById("menuIcon");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    menuIcon.addEventListener("click", () => {
+      menuOverlay.style.display = "flex";
+    });
+
+    menuOverlay.addEventListener("click", (e) => {
+      if (e.target === menuOverlay) {
+        menuOverlay.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Portfolio | Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Fixed canvas: animated particles create the moving 3D background feel. -->
+    <canvas class="space-canvas" id="spaceCanvas" aria-hidden="true"></canvas>
+
+    <div class="aurora-field" aria-hidden="true"></div>
+
+    <!-- Main website header / navigation bar. -->
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Portfolio home">
+        <span class="brand-mark">D</span>
+        <span>Divyanshi singh</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-action magnetic" href="#contact">Hire Me</a>
+    </nav>
+
+    <main>
+      <!-- Hero header: text on the left, animated 3D visual on the right. -->
+      <section class="hero section-3d" id="home">
+        <div class="hero-copy reveal">
+          <h1>Creative developer crafting animated web worlds.</h1>
+          <p class="hero-text">
+            I design and build expressive interfaces with smooth motion, sharp
+            frontend systems, and immersive 3D details that make scrolling feel
+            alive.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-btn magnetic" href="#work">View Projects</a>
+            <a class="secondary-btn magnetic" href="#contact">Contact Panel</a>
+          </div>
+        </div>
+
+        <!-- 3D hologram and floating panels are made with only HTML + CSS. -->
+        <div
+          class="hero-visual parallax-card"
+          id="heroVisual"
+          data-depth="0.22"
+        >
+          <div class="cube-loader">
+            <div class="cube face1"></div>
+            <div class="cube face2"></div>
+            <div class="cube face3"></div>
+            <div class="cube face4"></div>
+            <div class="cube face5"></div>
+            <div class="cube face6"></div>
+          </div>
+
+          <!-- REPLACE OLD GLASS PANELS WITH THIS -->
+
+          <div class="floating-card card-one magnetic">
+            <div class="card-glow"></div>
+
+            <div class="card-icon">🚀</div>
+
+            <div class="card-content">
+              <span>Projects Completed</span>
+              <h3>24+</h3>
+            </div>
+          </div>
+
+          <div class="floating-card card-two magnetic">
+            <div class="card-glow"></div>
+
+            <div class="card-icon">⚡</div>
+
+            <div class="card-content">
+              <span>Animation Speed</span>
+              <h3>60 FPS</h3>
+            </div>
+          </div>
+
+          <div class="floating-card card-three magnetic">
+            <div class="card-glow"></div>
+
+            <div class="card-icon">💎</div>
+
+            <div class="card-content">
+              <span>Main Stack</span>
+              <h3>React + GSAP</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

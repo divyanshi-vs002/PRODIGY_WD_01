@@ -1,1 +1,1 @@
-create full stack project
+Create a Responsive Landing Page
